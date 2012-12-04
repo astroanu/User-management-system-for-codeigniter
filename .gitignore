@@ -4,7 +4,6 @@ index.php
 license.txt
 application/core/
 application/errors/
-application/language/
 application/logs/
 application/third_party/
 application/.htaccess
