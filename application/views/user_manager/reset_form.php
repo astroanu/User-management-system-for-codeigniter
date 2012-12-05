@@ -1,5 +1,4 @@
 <?
-
 echo $msg;
 ?>
 <form action="reset" method="post">

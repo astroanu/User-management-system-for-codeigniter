@@ -4,7 +4,7 @@ RewriteEngine On
 # If your URL is www.example.com/, use /
 # If your URL is www.example.com/site_folder/, use /site_folder/
 
-RewriteBase /
+RewriteBase /CI_user_login
 
 # Do not enable rewriting for files or directories that exist
 RewriteCond %{REQUEST_FILENAME} !-f

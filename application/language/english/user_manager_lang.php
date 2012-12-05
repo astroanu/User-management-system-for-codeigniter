@@ -1,16 +1,4 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-////////////////////////////////////////
-//////USER MANAGER FOR CODEIGNITER//////
-/////////////version 1.0.0//////////////
-////////////////////////////////////////
-///written by - Anuradha Jayathilaka
-///email - me@anu3d.info
-///web - www.anu3d.info
-////////////////////////////////////////
-//This code is free to use in any project.
-//please leave this information if you're using this. thanks :)
-////////////////////////////////////////
-
 
 $lang['um_form_msg']='Fill in this form to get your membership. Fields marked in <font color="red">*</font> are mandatory';
 $lang['um_form_error']='An error occured while submitting your data. Please check again.';

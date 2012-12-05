@@ -1,16 +1,4 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-////////////////////////////////////////
-//////USER MANAGER FOR CODEIGNITER//////
-/////////////version 1.0.0//////////////
-////////////////////////////////////////
-///written by - Anuradha Jayathilaka
-///email - me@anu3d.info
-///web - www.anu3d.info
-////////////////////////////////////////
-//This code is free to use in any project.
-//please leave this information if you're using this. thanks :)
-////////////////////////////////////////
-
 
 class Um_users_model extends CI_Model {
     function __construct(){
@@ -92,6 +80,13 @@ class Um_users_model extends CI_Model {
 		return $query['userlvl'];
 	}
 	
+	public function get_all_users($start,$per_page){
+		$this->db->select('*');
+		$this->db->limit($start,$per_page);
+		$this->db->order_by('tbl_users_id');
+		$query= $this->db->get('users');
+		return $query->result_array();
+	}
 	
 	/*
 	COMMON FUNCTIONS

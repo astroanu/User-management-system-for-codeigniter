@@ -40,7 +40,7 @@ Last login on <? echo unix_to_human($lastloggenindate) ?>
 		<td>&nbsp;</td>
 	</tr>
 </table>
-<a href="logout">logout</a>
+<a href="<? echo base_url();?>logout">logout</a>
 <?
 if ($this->user_manager->this_user_name()==$username){
 	echo '<a href="'. base_url().'editprofile">edit profile</a>';

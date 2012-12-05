@@ -1,20 +1,9 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-////////////////////////////////////////
-//////USER MANAGER FOR CODEIGNITER//////
-/////////////version 1.0.0//////////////
-////////////////////////////////////////
-///written by - Anuradha Jayathilaka
-///email - me@anu3d.info
-///web - www.anu3d.info
-////////////////////////////////////////
-//This code is free to use in any project.
-//please leave this information if you're using this. thanks :)
-////////////////////////////////////////
-
 
 class User_manager_controller extends CI_Controller {
 
 	public function index(){
+
 	}
 	
 	/*
@@ -247,16 +236,27 @@ class User_manager_controller extends CI_Controller {
 	/*
 	shows the user's profile page
 	*/
-	public function show_profile(){
-		if($this->session->userdata('logged_in')){
-			$username=$this->user_manager->this_user_name();
-
-			$data=$this->um_users_model->get_user_details($username);
-			$data['dp']=$this->user_manager->get_dp($username);
-			$this->load->view('user_manager/profile',$data);
+	public function show_profile($username=null){
+		if($username==null){
+			if($this->session->userdata('logged_in')){
+				
+				$username=$this->user_manager->this_user_name();
+				$data=$this->um_users_model->get_user_details($username);
+				$data['dp']=$this->user_manager->get_dp($username);
+				$this->load->view('user_manager/profile',$data);
+			}else{
+				redirect('login','refresh');
+			}
 		}else{
-			redirect('login','refresh');
+			if($this->um_users_model->is_user_exist($username)){
+				$data=$this->um_users_model->get_user_details($username);
+				$data['dp']=$this->user_manager->get_dp($username);
+				$this->load->view('user_manager/profile',$data);
+			}else{
+				show_404();
+			}
 		}
+		
 	}
 	
 	/*
